@@ -11,6 +11,41 @@ struct ListNode {
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
+ListNode* createLinkedList(int arr[], int n) {
+
+    if (n == 0) return NULL;
+    ListNode* head = new ListNode(arr[0]);
+
+    ListNode* CurNode = head;
+    for (int i = 1; i < n; i++) {
+        CurNode->next = new ListNode(arr[i]);
+        CurNode = CurNode->next;
+    }
+    return head;
+}
+
+void printLinkedList(ListNode* head) {
+
+    ListNode* curNode = head;
+    while (curNode != NULL) {
+        cout << curNode->val << " -> ";
+        curNode = curNode->next;
+    }
+    cout << "NULL" << endl;
+    return;
+}
+
+void deletLinkedList(ListNode* head) {
+
+    ListNode* curNode = head;
+    while (curNode != NULL) {
+        ListNode* delNode = curNode;
+        curNode = curNode->next;
+        delete delNode;
+    }
+    return;
+}
+
 // class Solution {
 // public:
 // 	ListNode* reverseBetween(ListNode* head, int left, int right) {
@@ -110,6 +145,7 @@ public:
 //     }
 // };
 int main() {
+
 
 	system("pause");
 	return 0;

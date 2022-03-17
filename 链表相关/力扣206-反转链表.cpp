@@ -1,19 +1,12 @@
 #include<iostream>
 
-
+#include "myListNode.h"
 using namespace std;
 
 
 
  //Definition for singly-linked list.
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
- 
+
 //class Solution {
 //public:
 //	ListNode* reverseList(ListNode* head) {
@@ -53,6 +46,18 @@ public:
 };
 
 int main() {
+
+    int arr[] = { 1,2,3,4,5 };
+    int n = sizeof(arr) / sizeof(int);
+
+    ListNode* head = createLinkedList(arr, n);
+    printLinkedList(head);
+
+    ListNode* head2 = Solution().reverseList(head);
+    printLinkedList(head2);
+
+    deletLinkedList(head2);
+
 
 	system("pause");
 	return 0;
