@@ -12,6 +12,8 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+
+//arr传入数组，n数组长度
 ListNode* createLinkedList(int arr[], int n) {
     //给定一个数组，创建一个链表，返回链表头
     if (n == 0) return NULL;
